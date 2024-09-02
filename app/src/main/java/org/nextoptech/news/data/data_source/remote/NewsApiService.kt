@@ -1,6 +1,7 @@
-package org.nextoptech.news.data.remote
+package org.nextoptech.news.data.data_source.remote
 
-import org.nextoptech.news.data.remote.dto.NewsApiResponse
+import org.nextoptech.news.common.AppConstant.API_KEY
+import org.nextoptech.news.data.data_source.remote.dto.NewsApiResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -12,7 +13,7 @@ suspend fun getNews(
     @Query("from") from: String,
     @Query("to") to: String,
     @Query("sortBy") sortBy: String,
-    @Query("apiKey") apiKey: String
+    @Query("apiKey") apiKey: String = API_KEY
 ): NewsApiResponse
 
 }

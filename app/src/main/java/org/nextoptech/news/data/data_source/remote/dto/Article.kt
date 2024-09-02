@@ -1,4 +1,4 @@
-package org.nextoptech.news.data.remote.dto
+package org.nextoptech.news.data.data_source.remote.dto
 
 import androidx.compose.runtime.Stable
 import com.google.gson.annotations.SerializedName
