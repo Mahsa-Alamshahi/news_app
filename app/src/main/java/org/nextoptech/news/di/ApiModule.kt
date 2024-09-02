@@ -9,7 +9,6 @@ import okhttp3.logging.HttpLoggingInterceptor
 import org.nextoptech.news.common.AppConstant.API_KEY
 import org.nextoptech.news.common.AppConstant.BASE_URL
 import org.nextoptech.news.data.data_source.remote.NewsApiService
-import org.nextoptech.news.data.data_source.remote.dto.NewsApiResponse
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit

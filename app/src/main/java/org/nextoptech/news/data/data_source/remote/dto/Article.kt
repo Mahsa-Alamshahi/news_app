@@ -2,6 +2,7 @@ package org.nextoptech.news.data.data_source.remote.dto
 
 import androidx.compose.runtime.Stable
 import com.google.gson.annotations.SerializedName
+import org.nextoptech.news.domain.model.News
 
 @Stable
 data class Article(
@@ -22,3 +23,20 @@ data class Article(
     @SerializedName("urlToImage")
     val urlToImage: String?
 )
+
+
+
+
+fun Article.toNews(): News {
+    return News(
+        author = author,
+        content = content,
+        description = description,
+        publishedAt = publishedAt,
+        title = title,
+        url = url,
+        urlToImage = urlToImage,
+        sourceName = source?.name,
+        sourceId = source?.id
+    )
+}

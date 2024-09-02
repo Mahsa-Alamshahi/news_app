@@ -3,7 +3,7 @@ package org.nextoptech.news.domain.usecase
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import org.nextoptech.news.common.Resource
-import org.nextoptech.news.data.data_source.remote.dto.NewsApiResponse
+import org.nextoptech.news.data.data_source.remote.dto.NewsDto
 import org.nextoptech.news.domain.repository.RemoteRepository
 import retrofit2.HttpException
 import java.io.IOException
@@ -17,7 +17,7 @@ class GetNewsUseCase @Inject constructor(private val remoteRepository: RemoteRep
         from: String,
         to: String,
         sortBy: String
-    ): Flow<Resource<NewsApiResponse>> = flow {
+    ): Flow<Resource<NewsDto>> = flow {
 
         try {
             emit(Resource.Loading())
