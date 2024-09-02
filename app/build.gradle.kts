@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -66,4 +68,52 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+
+    // Dependency Injection
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
+
+
+
+
+    // Lifecycle
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation (libs.androidx.lifecycle.viewmodel.ktx)
+    implementation (libs.androidx.lifecycle.runtime.compose)
+    implementation(libs.androidx.runtime.livedata)
+
+
+    //Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+
+
+    //Navigation
+    implementation(libs.androidx.navigation.compose)
+
+
+    // Multidex
+    implementation(libs.androidx.multidex)
+
+
+    // Glide
+    implementation(libs.compose)
+
+
+    // Moshi
+    implementation(libs.moshi)
+
+
+    // Room
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx.v220)
+    kapt(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.rxjava2)
+
+
 }
