@@ -1,8 +1,14 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    id("kotlin-kapt")
-    id("dagger.hilt.android.plugin")
+    kotlin("kapt")
+    alias(libs.plugins.google.dagger.hilt)
+////    id("kotlin-kapt")
+//    id("dagger.hilt.android.plugin")
+}
+
+kapt {
+    correctErrorTypes = true
 }
 
 android {
@@ -20,6 +26,11 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+    }
+
+
+    kapt {
+        generateStubs = true
     }
 
     buildTypes {
@@ -71,10 +82,14 @@ dependencies {
 
 
     // Dependency Injection
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.android.compiler)
-    implementation(libs.androidx.hilt.navigation.compose)
-
+//    implementation(libs.hilt.android)
+//    kapt(libs.hilt.android.compiler)
+//    implementation(libs.androidx.hilt.navigation.compose)
+//    kapt(libs.androidx.hilt.compiler)
+//    implementation(libs.androidx.hilt.work)
+//    implementation(libs.androidx.work.runtime.ktx)
+    implementation(libs.google.dagger.hilt)
+    kapt(libs.google.dagger.hilt.compiler)
 
 
 
@@ -111,9 +126,11 @@ dependencies {
     // Room
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx.v220)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
     kapt(libs.androidx.room.compiler)
     implementation(libs.androidx.room.rxjava2)
 
+
+    implementation (libs.logger)
 
 }
