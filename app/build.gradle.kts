@@ -1,11 +1,17 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    kotlin("kapt")
+    alias(libs.plugins.google.dagger.hilt)
+}
+
+kapt {
+    correctErrorTypes = true
 }
 
 android {
     namespace = "org.nextoptech.news"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "org.nextoptech.news"
@@ -18,6 +24,11 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+    }
+
+
+    buildFeatures {
+        compose = true
     }
 
     buildTypes {
@@ -66,4 +77,53 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+
+    // Dependency Injection
+    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.google.dagger.hilt)
+    kapt(libs.google.dagger.hilt.compiler)
+
+
+
+    // Lifecycle
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation (libs.androidx.lifecycle.viewmodel.ktx)
+    implementation (libs.androidx.lifecycle.runtime.compose)
+    implementation(libs.androidx.runtime.livedata)
+
+
+    //Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+
+
+    //Navigation
+    implementation(libs.androidx.navigation.compose)
+
+
+    // Multidex
+    implementation(libs.androidx.multidex)
+
+
+    // Glide
+    implementation(libs.compose)
+
+
+    // Moshi
+    implementation(libs.moshi)
+
+
+    // Room
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    kapt(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.rxjava2)
+
+
+    implementation (libs.logger)
+    implementation(libs.jsoup)
 }
