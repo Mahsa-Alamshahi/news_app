@@ -2,7 +2,7 @@ package org.nextoptech.news.common
 
 object AppConstant {
 
-    const val API_KEY = "2ec9b938707942c687441a993e24f77e"
+    const val API_KEY = "d138b50732644689bca64a1b987eea5d"
     const val BASE_URL = "https://newsapi.org/v2/"
     const val DB_NAME ="newsDatabase"
 

@@ -35,10 +35,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
-import com.orhanobut.logger.Logger
 import org.nextoptech.news.common.AppConstant.BULLET
 import org.nextoptech.news.common.toJson
 import org.nextoptech.news.data.data_source.local.NewsEntity
@@ -130,7 +128,6 @@ fun NewsListItem(
                             }
                             .clickable {
                                 val articleString = news.toJson()
-                                Logger.d("aaaa $articleString")
                                 if (articleString != null) {
                                     onNewsClick(articleString)
                                 }
