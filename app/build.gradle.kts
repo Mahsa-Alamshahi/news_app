@@ -3,8 +3,6 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     kotlin("kapt")
     alias(libs.plugins.google.dagger.hilt)
-////    id("kotlin-kapt")
-//    id("dagger.hilt.android.plugin")
 }
 
 kapt {
@@ -13,7 +11,7 @@ kapt {
 
 android {
     namespace = "org.nextoptech.news"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "org.nextoptech.news"
@@ -29,8 +27,8 @@ android {
     }
 
 
-    kapt {
-        generateStubs = true
+    buildFeatures {
+        compose = true
     }
 
     buildTypes {
@@ -82,12 +80,7 @@ dependencies {
 
 
     // Dependency Injection
-//    implementation(libs.hilt.android)
-//    kapt(libs.hilt.android.compiler)
-//    implementation(libs.androidx.hilt.navigation.compose)
-//    kapt(libs.androidx.hilt.compiler)
-//    implementation(libs.androidx.hilt.work)
-//    implementation(libs.androidx.work.runtime.ktx)
+    implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.google.dagger.hilt)
     kapt(libs.google.dagger.hilt.compiler)
 
@@ -132,5 +125,5 @@ dependencies {
 
 
     implementation (libs.logger)
-
+    implementation(libs.jsoup)
 }

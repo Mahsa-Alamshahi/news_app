@@ -2,7 +2,8 @@ package org.nextoptech.news.data.data_source.remote.dto
 
 import androidx.compose.runtime.Stable
 import com.google.gson.annotations.SerializedName
-import org.nextoptech.news.domain.model.News
+import org.nextoptech.news.data.data_source.local.NewsEntity
+import org.nextoptech.news.utils.QueryParams
 
 @Stable
 data class Article(
@@ -27,16 +28,17 @@ data class Article(
 
 
 
-fun Article.toNews(): News {
-    return News(
+fun Article.toNewsEntity(queryName: QueryParams): NewsEntity {
+    return NewsEntity(
         author = author,
         content = content,
         description = description,
         publishedAt = publishedAt,
         title = title,
         url = url,
-        urlToImage = urlToImage,
+        imageUrl = urlToImage,
         sourceName = source?.name,
-        sourceId = source?.id
+        sourceId = source?.id,
+        queryName = queryName
     )
 }

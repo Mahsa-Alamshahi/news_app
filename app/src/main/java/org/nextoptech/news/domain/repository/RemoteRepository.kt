@@ -4,5 +4,6 @@ import org.nextoptech.news.data.data_source.remote.dto.NewsDto
 
 interface RemoteRepository {
 
-    suspend fun getNews(query: String, from: String, to: String, sortBy: String): NewsDto
+    suspend fun getNews(query: String, from: String, to: String, sortBy: String, page: Int):
+            NewsDto
 }
