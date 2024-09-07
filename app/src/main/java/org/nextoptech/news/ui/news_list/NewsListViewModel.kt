@@ -164,11 +164,8 @@ class NewsListViewModel @Inject constructor(
                         loading.value = false
                     }
                 }
-
             }
-
         }
     }
-
 
 }
