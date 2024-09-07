@@ -1,7 +1,6 @@
 # About
 
-- This repository is about searching on news articles by calling API. After getting result, user
-  could make favorite article list.
+- This repository is about getting news articles by calling API. When internet is disconnected, showing news articles in offline mode.
 
 <!-- ## Screenshots -->
 <!-- 
@@ -37,6 +36,7 @@ This sample showcases:
 * ORM (ROOM)
 * Navigation Component
 * Glide
+* Flow
 
 
 
